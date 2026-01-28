@@ -119,21 +119,32 @@
             padding-left: 20px;
             text-indent: -20px; /* Hanging indent */
         }
-       .btn-pdf {
-            display: inline-block;
+    .btn-pdf {
+            /* Flexbox forces the text to be perfectly centered */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Visual styling */
             font-size: 0.75rem;
             background-color: #eee;
             color: #333;
-            /* This "4px" controls top/bottom thickness. "8px" controls left/right width. */
-            padding: 4px 8px; 
             border-radius: 3px;
-            margin-left: 10px;
+            
+            /* Spacing */
+            padding: 2px 8px; /* 2px top/bottom, 8px left/right */
+            margin-left: 8px; /* Space between title and button */
+            
+            /* Functionality */
             text-decoration: none;
-            /* This ensures the button aligns with the middle of the text next to it */
-            vertical-align: middle; 
-            /* This is the key fix: it forces the text to sit in the center of the grey box */
-            line-height: 1;
-        .btn-pdf:hover { background-color: #ddd; text-decoration: none;}
+            line-height: normal; /* Resets line height so it doesn't inherit weird spacing */
+            vertical-align: middle; /* Aligns the grey box with the text next to it */
+        }
+
+        .btn-pdf:hover {
+            background-color: #ddd;
+            text-decoration: none;
+        }
 
         /* --- CV BUTTON --- */
         .cv-button {
