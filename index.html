@@ -119,31 +119,32 @@
             padding-left: 20px;
             text-indent: -20px; /* Hanging indent */
         }
-    .btn-pdf {
-            /* Flexbox forces the text to be perfectly centered */
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+      .btn-pdf {
+            /* 1. FORCE THE BOX SHAPE */
+            display: inline-flex;          /* This is mandatory for the box to work */
+            align-items: center;           /* Centers text vertically inside the grey box */
+            justify-content: center;       /* Centers text horizontally inside the grey box */
             
-            /* Visual styling */
-            font-size: 0.8rem;
+            /* 2. FORCE THE TEXT POSITION */
+            line-height: 1;                /* Forces text to be tight, ignoring paragraph spacing */
+            margin-left: 8px;              /* Space to the left of the button */
+            
+            /* 3. VISUALS */
             background-color: #eee;
             color: #333;
+            font-size: 0.75rem;            /* Small text */
+            padding: 4px 8px;              /* Adjust these numbers to make the box fatter/thinner */
             border-radius: 4px;
+            text-decoration: none;
             
-            /* Spacing */
-            padding: 3px 12px; /* 2px top/bottom, 8px left/right */
-            margin-left: 15px; /* Space between title and button */
-            
-            /* Functionality */
-            text-decoration: underline;
-            line-height: normal; /* Resets line height so it doesn't inherit weird spacing */
-            vertical-align: middle; /* Aligns the grey box with the text next to it */
+            /* 4. THE MANUAL NUDGE (Use this to fix the alignment) */
+            position: relative;            /* Allows us to move it */
+            top: -2px;                     /* Moves the button UP by 2 pixels. Change to 0px or -1px if too high. */
         }
 
         .btn-pdf:hover {
-            background-color: #ddd;
-            text-decoration: underline;
+            background-color: #ccc;
+            text-decoration: none;
         }
 
         /* --- CV BUTTON --- */
