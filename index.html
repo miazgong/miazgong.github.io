@@ -121,13 +121,17 @@
         }
         .btn-pdf {
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 0.75rem; /* Slightly smaller text for cleaner look */
             background-color: #eee;
             color: #333;
-            padding: 2px 6px;
+            padding: 1px 8px;
             border-radius: 3px;
-            margin-left: 5px;
+            margin-left: 12px; /* Increased space so it doesn't touch words */
             text-decoration: none;
+            vertical-align: baseline; /* Ensures it sits on the text line properly */
+            white-space: nowrap; /* Prevents the button from breaking */
+            position: relative; 
+            top: -1px; /* Micro-adjustment to lift it slightly */
         }
         .btn-pdf:hover { background-color: #ddd; text-decoration: none;}
 
