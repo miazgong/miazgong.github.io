@@ -127,7 +127,7 @@
             
             /* 2. FORCE THE TEXT POSITION */
             line-height: 1;                /* Forces text to be tight, ignoring paragraph spacing */
-            margin-left: 8px;              /* Space to the left of the button */
+            margin-left: 15px;              /* This controls the invisible distance between the button and the text next to it. */
             
             /* 3. VISUALS */
             background-color: #eee;
@@ -140,6 +140,7 @@
             /* 4. THE MANUAL NUDGE (Use this to fix the alignment) */
             position: relative;            /* Allows us to move it */
             top: -2px;                     /* Moves the button UP by 2 pixels. Change to 0px or -1px if too high. */
+            left: -3px; /* Moves the button 3px to the LEFT (closer to the text) */
         }
 
         .btn-pdf:hover {
