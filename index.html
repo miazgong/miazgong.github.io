@@ -4,365 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhiyu Mia Gong | Linguist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --ink: #1a1a18;
-            --ink-mid: #4a4a46;
-            --ink-light: #888882;
-            --ink-faint: #c8c8c0;
-            --paper: #f8f7f4;
-            --paper-warm: #f0ede6;
-            --accent: #2d4a6b;
-            --accent-soft: #e8edf2;
-            --rule: #ddddd5;
-            --serif: 'Times New Roman', Georgia, serif;
-            --sans: 'Gill Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        html { scroll-behavior: smooth; }
-
+        /* --- GLOBAL STYLES --- */
         body {
-            font-family: var(--sans);
-            font-weight: 300;
-            background-color: var(--paper);
-            color: var(--ink);
-            line-height: 1.7;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: 
+#fcfcfc;
         }
-
-        /* ── NAV ── */
+        a { color: 
+#0056b3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        /* --- NAVIGATION --- */
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: var(--paper);
-            border-bottom: 1px solid var(--rule);
-            padding: 0 clamp(24px, 6vw, 80px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 60px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 60px;
+            position: sticky;
+            top: 0;
+            background-color: 
+#fcfcfc;
+            z-index: 100;
         }
-
-        .nav-name {
-            font-family: 'Times New Roman', serif;
-            font-size: 1.05rem;
-            font-weight: 400;
-            letter-spacing: 0.03em;
-            color: var(--ink);
-            text-decoration: none;
+        nav h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
-
         nav ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            gap: 32px;
+            gap: 25px;
         }
-
         nav a {
-            font-family: var(--sans);
-            font-size: 0.8rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            /* text-transform: uppercase; */
-            color: var(--ink-mid);
-            text-decoration: none;
-            transition: color 0.15s;
-        }
-
-        nav a:hover { color: var(--ink); }
-
-        /* ── LAYOUT ── */
-        main {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 0 clamp(24px, 6vw, 40px);
-        }
-
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--rule);
-            scroll-margin-top: 80px;
-        }
-
-        section:last-child { border-bottom: none; }
-
-        /* ── HEADINGS ── */
-        .section-label {
-            font-family: var(--serif);
-            font-size: 1.25rem;
-            font-weight: 400;
-            letter-spacing: 0.12em;
-            /* text-transform: uppercase; */
-            color: var(--ink);
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-family: var(--serif);
-            font-size: clamp(1.6rem, 3vw, 2rem);
-            font-weight: 400;
-            line-height: 1.3;
-            color: var(--ink);
-            margin-bottom: 24px;
-        }
-
-        h3 {
-            font-family: var(--serif);
-            font-size: 1.05rem;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--ink-mid);
-            margin: 52px 0 20px;
-            letter-spacing: 0.03em;
-        }
-
-        p {
+            color: #555;
+            font-weight: 500;
             font-size: 1rem;
-            color: var(--ink-mid);
-            margin-bottom: 1.1em;
         }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
+        nav a:hover { color: #000; }
+        /* --- SECTIONS --- */
+        section {
+            scroll-margin-top: 100px; /* Prevents nav from covering title on scroll */
+            margin-bottom: 80px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 60px;
         }
-
-        a:hover { text-decoration: underline; }
-
-        /* ── ABOUT ── */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 52px;
+        section:last-child { border-bottom: none; }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #111;
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #444;
+            border-left: 4px solid #ddd;
+            padding-left: 10px;
+        }
+        /* --- ABOUT SECTION --- */
+        .about-container {
+            display: flex;
+            gap: 50px;
             align-items: start;
         }
-
-        .headshot-wrap {
-            position: relative;
-        }
-
         .headshot {
-            width: 200px;
-            height: 240px;
+            width: 250px;
+            height: 250px;
             object-fit: cover;
-            display: block;
-            background-color: var(--paper-warm);
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #eee;
+            flex-shrink: 0;
         }
-
-        .headshot-rule {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            right: -12px;
-            bottom: -12px;
-            border: 1px solid var(--ink-faint);
-            z-index: -1;
-        }
-
-        .bio-text {
-            padding-top: 4px;
-        }
-
-        .bio-text p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .bio-text .name-display {
-            font-family: 'Times New Roman', serif;
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            line-height: 1.2;
-            color: var(--ink);
-            margin-bottom: 6px;
-        }
-
-        .bio-text .title-display {
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            /* text-transform: uppercase; */
-            color: var(--ink-light);
-            margin-bottom: 28px;
-        }
-
-        /* ── RESEARCH ── */
-        .research-text p {
-            font-size: 1rem;
-            max-width: 640px;
-        }
-
-        .research-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 36px;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            letter-spacing: 0.04em;
-            color: var(--accent);
-            background: var(--accent-soft);
-            padding: 5px 12px;
-            border-radius: 2px;
-        }
-
-        /* ── PUBLICATIONS ── */
-        .pub-list {
-            list-style: none;
-        }
-
-        .pub-list li {
+        .bio-text { font-size: 1.1rem; }
+        /* --- RESEARCH GALLERY --- */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: 48px 1fr;
-            gap: 16px;
-            padding: 18px 0;
-            border-bottom: 1px solid var(--rule);
-            font-size: 0.95rem;
-            color: var(--ink-mid);
-            line-height: 1.6;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
         }
-
-        .pub-list li:first-child { border-top: 1px solid var(--rule); }
-
-        .pub-year {
-            font-family: var(--serif);
-            font-size: 1rem;
-            color: var(--ink-light);
-            padding-top: 2px;
-            font-style: italic;
+        .gallery-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 3px;
+            background-color: #eee;
+            transition: transform 0.2s;
         }
-
-        .pub-content strong {
-            font-weight: 500;
-            color: var(--ink);
-        }
-
-        .pub-content em {
-            font-family: var(--serif);
-            font-style: italic;
-        }
-
-        .pub-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .btn-link {
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--accent);
-            border: 1px solid var(--accent-soft);
-            background: var(--accent-soft);
-            padding: 3px 10px;
-            border-radius: 2px;
-            text-decoration: none;
-            transition: background 0.15s, border-color 0.15s;
-        }
-
-        .btn-link:hover {
-            background: #d4dce8;
-            border-color: #bec8d8;
-            text-decoration: none;
-        }
-
-        .btn-link.doi {
-            color: var(--ink-mid);
-            background: transparent;
-            border-color: var(--rule);
-        }
-
-        .btn-link.doi:hover { background: var(--paper-warm); }
-
-        /* ── PRESENTATIONS ── */
-        .pres-list {
+        .gallery-img:hover { transform: scale(1.02); }
+        /* --- PAPERS LIST --- */
+        .publication-list {
             list-style: none;
+            padding-left: 0;
         }
-
-        .pres-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--rule);
-            font-size: 0.9rem;
-            color: var(--ink-mid);
-            display: grid;
-            grid-template-columns: 44px 1fr;
-            gap: 16px;
+        .publication-list li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            text-indent: -20px; /* Hanging indent */
         }
+      .btn-pdf {
+            /* 1. FORCE THE BOX SHAPE */
+            display: inline-flex;          /* This is mandatory for the box to work */
+            align-items: center;           /* Centers text vertically inside the grey box */
+            justify-content: center;       /* Centers text horizontally inside the grey box */
 
-        .pres-list li:first-child { border-top: 1px solid var(--rule); }
+            /* 2. FORCE THE TEXT POSITION */
+            line-height: 1;                /* Forces text to be tight, ignoring paragraph spacing */
+            margin-left: 15px;              /* This controls the invisible distance between the button and the text next to it. */
 
-        /* ── CV SECTION ── */
-        .cv-section p {
-            color: var(--ink-mid);
-            margin-bottom: 28px;
-            max-width: 480px;
+            /* 3. VISUALS */
+            background-color: transparent;
+            color: 
+#0056b3;
+            font-size: 1rem;            /* Small text */
+            padding: 4px 8px;              /* Adjust these numbers to make the box fatter/thinner */
+            border-radius: 4px;
+            text-decoration: none;
+
+            /* 4. THE MANUAL NUDGE (Use this to fix the alignment) */
+            position: relative;            /* Allows us to move it */
+            top: 0px;                     /* Moves the button UP by 2 pixels. Change to 0px or -1px if too high. */
+            left: 0px; /* Moves the button 3px to the LEFT (closer to the text) */
         }
-
+        .btn-pdf:hover {
+            background-color: #ccc;
+            text-decoration: underline;
+        }
+        /* --- CV BUTTON --- */
         .cv-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--paper);
-            background: var(--ink);
-            padding: 12px 24px;
-            border-radius: 2px;
-            text-decoration: none;
-            transition: background 0.15s;
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-weight: bold;
         }
-
-        .cv-button:hover {
-            background: var(--ink-mid);
-            text-decoration: none;
-            color: var(--paper);
-        }
-
-        .cv-button svg {
-            width: 14px;
-            height: 14px;
-            stroke: currentColor;
-            fill: none;
-        }
-
-        /* ── MOBILE ── */
-        @media (max-width: 640px) {
-            nav { padding: 0 20px; }
-            nav ul { gap: 20px; }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .headshot { width: 100%; height: 260px; }
-            .headshot-rule { display: none; }
-
-            section { padding: 56px 0; }
-
-            .pub-list li { grid-template-columns: 1fr; gap: 4px; }
-            .pub-year { padding-top: 0; }
-
-            .pres-list li { grid-template-columns: 1fr; gap: 4px; }
+        .cv-button:hover { background-color: #555; text-decoration: none; color: white;}
+        /* --- MOBILE --- */
+        @media (max-width: 700px) {
+            .about-container { flex-direction: column; }
+            .headshot { width: 100%; height: auto; margin-bottom: 20px;}
+            nav { flex-direction: column; gap: 15px; align-items: flex-start; }
+            nav ul { flex-wrap: wrap; gap: 15px; }
         }
     </style>
 </head>
 <body>
-
     <nav>
-        <a href="#about" class="nav-name">Zhiyu Mia Gong</a>
+        <h1>Zhiyu Mia Gong</h1>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#research">Research</a></li>
@@ -370,225 +173,73 @@
             <li><a href="#cv">CV</a></li>
         </ul>
     </nav>
-
-    <main>
-
-        <!-- ABOUT -->
-        <section id="about">
-            <div class="about-grid">
-                <div class="headshot-wrap">
-                    <img src="headshot.jpg" alt="Mia Gong" class="headshot">
-                    <div class="headshot-rule"></div>
-                </div>
-                <div class="bio-text">
-                    <p class="name-display">Zhiyu Mia Gong</p>
-                    <p class="title-display">Assistant Professor · UC Santa Cruz Linguistics</p>
-                    <p>I am an Assistant Professor in Linguistics at the University of California, Santa Cruz.</p>
-                    <p>My research centers on syntax and the syntax-morphology interface, with particular attention to understudied languages of Central Eurasia. A significant portion of my work is informed by data collected via fieldwork, viewed through a comparative lens.</p>
-                </div>
+    <section id="about">
+        <div class="about-container">
+            <img src="headshot.jpg" alt="Mia Gong Headshot" class="headshot">
+            <div class="bio-text">
+                <p> I am an Assistant Professor in Linguistics at the University of California, Santa Cruz. <p>
+                <p> My research centers on syntax and the syntax-morphology interface, with particular attention to understudied languages of Central Eurasia. A significant portion of my work is informed by data collected via fieldwork, viewed through a comparative lens.</p>
             </div>
-        </section>
+        </div>
+    </section>
+    <section id="research">
+        <h2>Research Overview</h2>
+        <p>My research program primarily focuses on syntax and the syntax-morphology interface, aiming to account for surface structural variation and underlying parallels in typologically different languages. This program is empirically grounded in fieldwork, with a concentration on the languages of Central Eurasia.</p>
+        <p>Much of my work since 2018 has centered on Mongolic languages and varieties, including Dagur, Chakhar Mongolian, and Khalkha Mongolian. In these languages, I investigate phenomena such as scrambling, raising, case, binding, and nominalization.</p>
 
-        <!-- RESEARCH -->
-        <section id="research">
-            <p class="section-label">Research</p>
-            <div class="research-text">
-                <p>My research program primarily focuses on syntax and the syntax-morphology interface, aiming to account for surface structural variation and underlying parallels in typologically different languages. This program is empirically grounded in fieldwork, with a concentration on the languages of Central Eurasia.</p>
-                <p>Much of my work since 2018 has centered on Mongolic languages and varieties, including Dagur, Chakhar Mongolian, and Khalkha Mongolian. In these languages, I investigate phenomena such as scrambling, raising, case, binding, and nominalization.</p>
-            </div>
-            <!-- <div class="research-tags">
-                <span class="tag">Syntax</span>
-                <span class="tag">Syntax-Morphology Interface</span>
-                <span class="tag">Mongolic Languages</span>
-                <span class="tag">Fieldwork</span>
-                <span class="tag">Central Eurasian Languages</span>
-                <span class="tag">Scrambling</span>
-                <span class="tag">Case</span>
-                <span class="tag">Nominalization</span>
-            </div> -->
-        </section>
+       <!--  <h3 style="border:none; margin-top:30px;">Fieldwork Gallery</h3>
+        <div class="gallery-grid">
+            <img src="fieldwork1.jpg" alt="Fieldwork 1" class="gallery-img">
+            <img src="fieldwork2.jpg" alt="Fieldwork 2" class="gallery-img">
+            <img src="fieldwork3.jpg" alt="Fieldwork 3" class="gallery-img">-->
+            <!-- <img src="fieldwork4.jpg" alt="Fieldwork 4" class="gallery-img"> -->
+            <!-- <img src="fieldwork5.jpg" alt="Fieldwork 5" class="gallery-img"> -->
+        </div>
+    </section>
+    <section id="papers">
+        <h2>Publications & Manuscripts</h2>
 
-        <!-- PAPERS -->
-        <section id="papers">
-            <p class="section-label">Publications &amp; Manuscripts</p>
+        <ul class="publication-list">
+            <li>Accepted. <strong>Gong, Z. M.</strong> Two Types of Long Distance Scrambling in Mongolian. <em>Syntactic Theory and Research</em>. <a href="papers/18158_Gong.pdf" class="btn-pdf">PDF</a></li>
+            <li>Accepted. <strong>Gong, Z. M.</strong> & Despić, M. On the Syntax of Cross-Categorial Reflexive Marking in Khalkha Mongolian. <em>Journal of East Asian Linguistics</em>.<a href="papers/gong_despic_refl.pdf" class="btn-pdf">PDF</a></li>
+            <li>To appear. <strong>Gong, Z. M.</strong> & Ótott-Kovács, E. Variation in the subject position requires both relative clause-external and internal analyses. In <em>Proceedings of the 43rd West Coast Conference on Formal Linguistics</em>. <a href="papers/wccfl43-1.pdf" class="btn-pdf">PDF</a></li>
 
-            <ul class="pub-list">
-                <li>
-                    <span class="pub-year">Accepted</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> Two Types of Long Distance Scrambling in Mongolian. <em>Syntactic Theory and Research</em>.
-                        <div class="pub-links">
-                            <a href="papers/18158_Gong.pdf" class="btn-link">PDF</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">Accepted</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> &amp; Despić, M. On the Syntax of Cross-Categorial Reflexive Marking in Khalkha Mongolian. <em>Journal of East Asian Linguistics</em>.
-                        <div class="pub-links">
-                            <a href="papers/gong_despic_refl.pdf" class="btn-link">PDF</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">To appear</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> &amp; Ótott-Kovács, E. Variation in the subject position requires both relative clause-external and internal analyses. <em>Proceedings of the 43rd West Coast Conference on Formal Linguistics</em>.
-                        <div class="pub-links">
-                            <a href="papers/wccfl43-1.pdf" class="btn-link">PDF</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">To appear</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> Wh-island Sensitivity Reveals Two Scrambling Mechanisms in Khalkha Mongolian. <em>Proceedings of the 43rd West Coast Conference on Formal Linguistics</em>.
-                        <div class="pub-links">
-                            <a href="papers/wccfl43-2.pdf" class="btn-link">PDF</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2024</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> &amp; Despić, M. On the Nature of Reflexive Possessive Agreement In Mongolian: From Nominals to Clauses. <em>Proceedings of WAFL17</em>.
-                        <div class="pub-links">
-                            <a href="papers/wafl17.pdf" class="btn-link">PDF</a>
-                            <a href="https://mitwpl.mit.edu/catalog/mwpl94/" class="btn-link doi">Link</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2023</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> A/A'-operations at the Mongolian clausal periphery. <em>Journal of East Asian Linguistics</em>. Open Access.
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1007/s10831-023-09268-4" class="btn-link doi">DOI</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2022</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> Case in wholesale late merger: evidence from Mongolian scrambling. <em>Linguistic Inquiry</em>. 1–66.
-                        <div class="pub-links">
-                            <a href="papers/li-2022.pdf" class="btn-link">PDF</a>
-                            <a href="https://doi.org/10.1162/ling_a_00494" class="btn-link doi">DOI</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2022</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> Scrambling and reconstruction asymmetries. <em>University of Pennsylvania Working Papers in Linguistics</em>, Vol. 28.1.
-                        <div class="pub-links">
-                            <a href="papers/pwpl-2022.pdf" class="btn-link">PDF</a>
-                            <a href="https://repository.upenn.edu/handle/20.500.14332/45359" class="btn-link doi">Link</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2021</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> Postsyntactic Lowering and linear relations in Dagur noun phrases. <em>Glossa: A Journal of General Linguistics</em>. 6(1), 42. Open Access.
-                        <div class="pub-links">
-                            <a href="http://doi.org/10.5334/gjgl.1397" class="btn-link doi">DOI</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2020</span>
-                    <div class="pub-content">
-                        <strong>Gong, Z. M.</strong> The POSS-final suffix order in Dagur. <em>Proceedings of the 50th Annual Meeting of the North East Linguistic Society</em>.
-                        <div class="pub-links">
-                            <a href="papers/nels50.pdf" class="btn-link">PDF</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <li>To appear. <strong>Gong, Z. M.</strong> Wh-island Sensitivity Reveals Two Scrambling Mechanisms in Khalkha Mongolian. In <em>Proceedings of the 43rd West Coast Conference on Formal Linguistics</em>. <a href="papers/wccfl43-2.pdf" class="btn-pdf">PDF</a></li>
 
-            <h3>Selected Presentations &amp; Handouts</h3>
+            <li>2024. <strong>Gong, Z. M.</strong> & Despić, M. On the Nature of Reflexive Possessive Agreement In Mongolian: From Nominals to Clauses. In <em>Proceedings of WAFL17</em>. <a href="papers/wafl17.pdf" class="btn-pdf">PDF</a> <a href="https://mitwpl.mit.edu/catalog/mwpl94/">[Link]</a></li>
 
-            <ul class="pres-list">
-                <li>
-                    <span class="pub-year">2025</span>
-                    <div class="pub-content">
-                        Two Types of Long-Distance Scrambling Across Weak Islands. <em>43rd West Coast Conference on Formal Linguistics</em>, UW Seattle.
-                        <div class="pub-links"><a href="papers/wccfl-handout.pdf" class="btn-link">Handout</a></div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2025</span>
-                    <div class="pub-content">
-                        Specification of D Derives Variation in Relative Clauses. <em>Workshop on Turkic and Languages in Contact with Turkic (Tu+10)</em>, USC.
-                        <div class="pub-links"><a href="papers/tu10.pdf" class="btn-link">PDF</a></div>
-                    </div>
-                </li>
-                <li>
-                    <span class="pub-year">2024</span>
-                    <div class="pub-content">Dissecting Relative Clauses with Genitive Subjects — A Methodology (with Eszter Ótott-Kovács). <em>USC Seminar in Syntax: Topics in Turkic</em>.</div>
-                </li>
-                <li>
-                    <span class="pub-year">2024</span>
-                    <div class="pub-content">Reflexive Binding in Mongolian (with Miloje Despić). <em>GLOW in Asia XIV</em>, CUHK.</div>
-                </li>
-                <li>
-                    <span class="pub-year">2023</span>
-                    <div class="pub-content">On the Nature of Reflexive Binding in Mongolian: from Nominals to Clauses (w/ Miloje Despić). <em>WAFL17</em>, Institute of Mongolian Studies, Ulaanbaatar.</div>
-                </li>
-                <li>
-                    <span class="pub-year">2022</span>
-                    <div class="pub-content">A/A'-operations at the clausal periphery: Agree, movement, and the interpretation of chains. <em>Berkeley Syntax &amp; Semantics Circle</em>.</div>
-                </li>
-                <li>
-                    <span class="pub-year">2021</span>
-                    <div class="pub-content">Condition C reconstruction revisited: scrambling, late merger, and the A/A'-distinction in Mongolian. <em>Syracuse-Cornell Word Order/Scrambling Workshop</em>.</div>
-                </li>
-                <li>
-                    <span class="pub-year">2021</span>
-                    <div class="pub-content">Late Merger in scrambling — A Mongolian case study. <em>PLC45</em>, University of Pennsylvania (online).</div>
-                </li>
-                <li>
-                    <span class="pub-year">2019</span>
-                    <div class="pub-content">The POSS-final suffix order in Dagur. <em>NELS 50</em>, MIT.</div>
-                </li>
-                <li>
-                    <span class="pub-year">2019</span>
-                    <div class="pub-content">A lowering analysis of the Dagur CASE-POSS order. <em>WAFL15</em>, Lomonosov Moscow State University.</div>
-                </li>
-            </ul>
+            <li>2023. <strong>Gong, Z. M.</strong> A/A’-operations at the Mongolian clausal periphery. <em>Journal of East Asian Linguistics</em>. Open Access. <a href="https://doi.org/10.1007/s10831-023-09268-4">DOI</a></li>
 
-            <h3>Dissertation</h3>
-            <ul class="pub-list">
-                <li>
-                    <span class="pub-year">2022</span>
-                    <div class="pub-content">
-                        Issues in the Syntax of Movement: Cross-Clausal Dependencies, Reconstruction, and Movement Typology. Cornell University.
-                        <div class="pub-links">
-                            <a href="papers/dissertation.pdf" class="btn-link">PDF</a>
-                            <a href="http://doi.org/10.7298/fjnb-7193" class="btn-link doi">DOI</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
+            <li>2022. <strong>Gong, Z. M.</strong> Case in wholesale late merger: evidence from Mongolian scrambling. <em>Linguistic Inquiry</em>. 1–66. <a href="papers/li-2022.pdf" class="btn-pdf">PDF</a> <a href="https://doi.org/10.1162/ling_a_00494">DOI</a></li>
 
-        <!-- CV -->
-        <section id="cv">
-            <p class="section-label">Curriculum Vitae</p>
-            <div class="cv-section">
-                <p>A full copy of my CV is available for download below.</p>
-                <a href="CV.pdf" class="cv-button" target="_blank">
-                    <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 3v13M8 12l4 4 4-4M5 20h14"/>
-                    </svg>
-                    Download CV
-                </a>
-            </div>
-        </section>
+            <li>2022. <strong>Gong, Z. M.</strong> Scrambling and reconstruction asymmetries. In <em>University of Pennsylvania Working Papers in Linguistics: Vol. 28.1</em>. <a href="papers/pwpl-2022.pdf" class="btn-pdf">PDF</a> <a href="https://repository.upenn.edu/handle/20.500.14332/45359">[Link]</a></li>
 
-    </main>
+            <li>2021. <strong>Gong, Z. M.</strong> Postsyntactic Lowering and linear relations in Dagur noun phrases. <em>Glossa: A Journal of General Linguistics</em>. 6(1), 42. Open Access. <a href="http://doi.org/10.5334/gjgl.1397">DOI</a></li>
 
+            <li>2020. <strong>Gong, Z. M.</strong> The POSS-final suffix order in Dagur. In <em>The Proceedings of 50th Annual Meeting of the North East Linguistic Society</em>. <a href="papers/nels50.pdf" class="btn-pdf">PDF</a></li>
+        </ul>
+        <h3>Selected Presentations & Handouts</h3>
+        <ul class="publication-list">
+            <li>2025. Two Types of Long-Distance Scrambling Across Weak Islands. The 43rd West Coast Conference on Formal Linguistics, UW Seattle. <a href="papers/wccfl-handout.pdf" class="btn-pdf">Handout</a></li>
+            <li>2025. Specification of D Derives Variation in Relative Clauses. The 10th iteration of the Workshop on Turkic and Languages in Contact with Turkic (Tu+10), USC. <a href="papers/tu10.pdf" class="btn-pdf">PDF</a></li>
+            <li>2024. Dissecting Relative Clauses with Genitive Subjects – A Methodology (with Eszter Ótott-Kovács). USC Seminar in Syntax: Topics in Turkic.</li>
+            <li>2024. Reflexive Binding in Mongolian (with Miloje Despić). GLOW in Asia XIV, Department of Linguistics and Modern Languages, CUHK.</li>
+            <li>2023. On the Nature of Reflexive Binding in Mongolian: from Nominals to Clauses (w/ Miloje Despić). WAFL17, Institute of Mongolian Studies, Ulaanbaatar, Mongolia.</li>
+            <li>2022. A/A’-operations at the clausal periphery: Agree, movement, and the interpretation of chains. Berkeley Syntax & Semantics Circle.</li>
+            <li>2021. Condition C reconstruction revisited: scrambling, late merger, and the A/A’-distinction in Mongolian. Syracuse-Cornell Word Order/Scrambling Workshop.</li>
+            <li>2021. Late Merger in scrambling — A Mongolian case study. PLC45, University of Pennsylvania (online).</li>
+            <li>2019. The POSS-final suffix order in Dagur. NELS 50, MIT.</li>
+            <li>2019. A lowering analysis of the Dagur CASE-POSS order. WAFL15, Lomonosov Moscow State University.</li>
+        </ul>
+        <h3>Dissertation</h3>
+        <ul class="publication-list">
+            <li>Issues in the Syntax of Movement: Cross-Clausal Dependencies, Reconstruction, and Movement Typology. Cornell University. <a href="papers/dissertation.pdf" class="btn-pdf">PDF</a> <a href="http://doi.org/10.7298/fjnb-7193">DOI</a></li>
+        </ul>
+    </section>
+    <section id="cv">
+        <h2>Curriculum Vitae</h2>
+        <p>You can download a full copy of my CV below.</p>
+        <a href="CV.pdf" class="cv-button" target="_blank">Download CV (PDF)</a>
+    </section>
 </body>
 </html>
